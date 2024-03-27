@@ -4,44 +4,42 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-
 import Login from './Login';
 import Home from './Home';
-import UserProvider, { UserContext } from './context/UserContext';
+import CatalogoViagem from './CatalogoViagem';
+import Agenda from './Agenda';
+import Evento from './Evento';
+import Comentarios from './Comentarios';
 import { useContext } from 'react';
+
+import {UserContext} from "./context/UserContext";
 
 const Tab = createBottomTabNavigator();
 
-
-  export default function Rotas() {
+export default function Rotas() {
 
     const {logado} = useContext(UserContext);
 
-    if( logado == false ) {
-        return( <Login/>)
+    if (logado == false) {
+        return (<Login />)
     }
-
-
-
-return (
-    <UserProvider>
-      <NavigationContainer>
-        <Tab.Navigator initialRouteName="Home">
-        <Tab.Screen name="Login" component={Login}/>
-          <Tab.Screen name="Home" component={Home}/>
-        
-         </Tab.Navigator>
-
-      </NavigationContainer>
-    </UserProvider>
-  );
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
+    return (
+        <NavigationContainer>
+            <Tab.Navigator initialRouteName="Agenda">
+                <Tab.Screen name="Agenda" component={Agenda} options={{
+                    tabBarLabel: 'Agenda',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="calendar" color={color} size={size} />
+                    ),
+                }} />
+                <Tab.Screen name="Comentários" component={Comentarios} options={{
+                    tabBarLabel: 'Comentários',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="forum" color={color} size={size} />
+                    ),
+                
+                }} />
+            </Tab.Navigator>
+        </NavigationContainer>
+    );
 }
