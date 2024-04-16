@@ -129,7 +129,7 @@ export default function Agenda(){
                 renderItem={ ({item}) => <Evento agenda={item.nome} inicio={item.inicio} final={item.final} /> }
                 keyExtractor={ item => item.id }
             />
-            <Text> Bem vindo: {usuario}</Text>
+            <Text style={css.bemvindo}> Bem vindo: {usuario}</Text>
             </View>
         </View>
     )
@@ -148,7 +148,7 @@ const css = StyleSheet.create({
         
     },
     titulo:{
-        color: "'#E04082'",
+        color: "#E04082",
         fontWeight:"bold",
         textAlign: "center",
         lineHeight: 45,
@@ -174,7 +174,7 @@ const css = StyleSheet.create({
         width: "90%",
         height: 45,
         borderRadius: 5,
-        backgroundColor: "'#E04082'",
+        backgroundColor: "#E04082",
         marginTop: 10,
         marginLeft:20,
         
@@ -192,6 +192,9 @@ const css = StyleSheet.create({
     fundo: {
         backgroundColor:"#FAA3D9",
         height: "100%"
+    },
+    bemvindo:{
+        
     }
    
 })

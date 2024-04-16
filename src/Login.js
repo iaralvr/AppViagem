@@ -95,8 +95,8 @@ const css = StyleSheet.create ({
             marginTop: '10%'
         },
     texto: {
-        marginTop: '5%',
-        textAlign: 'center',
+        marginLeft: '25%',
+        marginTop: '6%'
     },
     cadastro:{
         marginLeft: '22%'
