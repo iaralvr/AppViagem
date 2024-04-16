@@ -59,7 +59,7 @@ const css = StyleSheet.create ({
           marginTop: 10,
           marginLeft: '8%',
           height: 45,
-          backgroundColor: '#AAE3AB',
+          backgroundColor: '#FAA3D9',
           borderRadius: 5,
           color: 'white'
         },
@@ -89,7 +89,7 @@ const css = StyleSheet.create ({
             marginTop: '10%'
         },
     texto: {
-        marginLeft: '11%',
+        marginLeft: '25%',
         marginTop: '6%'
     },
     cadastro:{

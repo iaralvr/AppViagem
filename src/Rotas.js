@@ -26,6 +26,19 @@ export default function Rotas() {
     return (
         <NavigationContainer>
             <Tab.Navigator initialRouteName="Agenda">
+
+            <Tab.Screen name="Home" component={Home} options={{
+                    tabBarLabel: 'Home',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="home" color={color} size={size} />
+                    ),
+                }} />
+                <Tab.Screen name="Login" component={Login} options={{
+                    tabBarLabel: 'Login',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="snapchat" color={color} size={size} />
+                    ),
+                }} />
                 <Tab.Screen name="Agenda" component={Agenda} options={{
                     tabBarLabel: 'Agenda',
                     tabBarIcon: ({ color, size }) => (
@@ -39,6 +52,7 @@ export default function Rotas() {
                     ),
                 
                 }} />
+            
             </Tab.Navigator>
         </NavigationContainer>
     );
