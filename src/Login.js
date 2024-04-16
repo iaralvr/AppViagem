@@ -8,8 +8,11 @@ export default function Login ()
     const[ email, setEmail ] = useState("");
     const[ senha, setSenha ] = useState("");
     const[ erro, setErro ] = useState( false );
+    const {Login} = useContext( UserContext );
 
-    const {Login}= useContext(UserContext);
+    const {setLogin, setCadastro} = useContext(UserContext);
+
+ 
 
     
   
@@ -24,23 +27,26 @@ export default function Login ()
         <View style={css.tudo}> 
         <View style={css.container}>
             <Image style={css.imagem} source={require('../assets/Logotipo.png' )}></Image>
-            <View><Text style={css.texto}>ENTRE OU FAÇA O CADASTRO </Text></View>
+            <View><Text style={css.texto}>Entre ou faça o cadastro </Text></View>
             <View style={css.caixa}>
                 <TextInput style={css.input} placeholder="E-mail" value={email} onChangeText={ (digitado) => setEmail( digitado )}></TextInput>
                 <TextInput style={css.input} placeholder="Senha" value={senha} onChangeText={ (digitado) => setSenha( digitado )}></TextInput>
-                <TouchableOpacity style={css.btn} onPress={realizalogin}>
-                    <Text style={css.btnText}>ENTRAR</Text>
+                <TouchableOpacity style={css.btnText} onPress={realizalogin}>
+                    <Text style={css.btn} onPress={ () => setLogin( true ) }>ENTRAR</Text>
                 </TouchableOpacity>
                 </View>
-                <View><Text style={css.cadastro}>Não tem conta? Faça o cadastro</Text></View>
-                { erro && <Text >Dados Inválidos, Por Favor Confirme suas Informações.</Text>}
+                <View>
+                    <Text onPress={() => {setCadastro( true); setLogin( true );}}>Não tem conta? Cadastre-se</Text></View>
+                                { erro && <Text >Dados Inválidos, Por Favor Confirme suas Informações.
+                                    </Text>}
         </View>        
         </View>
     )
 }
 
 const css = StyleSheet.create ({
-
+ 
+    
     input: {
         width: "83%",
         height: 40,
@@ -59,7 +65,7 @@ const css = StyleSheet.create ({
           marginTop: 10,
           marginLeft: '8%',
           height: 45,
-          backgroundColor: '#AAE3AB',
+          backgroundColor: '#FAA3D9',
           borderRadius: 5,
           color: 'white'
         },
@@ -89,11 +95,12 @@ const css = StyleSheet.create ({
             marginTop: '10%'
         },
     texto: {
-        marginLeft: '11%',
-        marginTop: '6%'
+        marginTop: '5%',
+        textAlign: 'center',
     },
     cadastro:{
         marginLeft: '22%'
     }
+   
 
 });

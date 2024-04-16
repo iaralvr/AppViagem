@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <View style={styles.spacer}></View>
-      <Image source={require('../assets/fundohome.png')} style={styles.imagem} />
+      <Image source={require('../assets/fundohome.jpeg')} style={styles.imagem} />
       <TouchableOpacity style={styles.button} onPress={handleContinuePress}>
         <Text style={styles.buttonText}>Continuar</Text>
       </TouchableOpacity>
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#469843',
+    backgroundColor: '#E04082',
   },
   title: {
     fontSize: 24,
@@ -32,13 +32,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   button: {
-    backgroundColor: '#AAE3AB',
+    backgroundColor: '#FAA3D9',
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 5,
   },
   buttonText: {
-    color: '#469843',
+    color: '#E04082',
     fontSize: 16,
     fontWeight: 'bold',
   },
